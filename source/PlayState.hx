@@ -479,7 +479,6 @@ class PlayState extends MusicBeatState
 
 		#if MODS_ALLOWED
 		if (Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0) {
-			var currentMod:ModMetadata = new ModMetadata (Paths.currentModDirectory);
 			if (currentMod.id == "name") ArtemisIntegration.resetModName ();
 			else ArtemisIntegration.setModName (currentMod.id);
 

@@ -42,7 +42,7 @@ haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
 haxelib install hscript
 haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
 # Polymod
-haxelib install polymod 1.5.2
+haxelib install polymod 1.5.3
 # SWF Support
 haxelib install swf 3.1.0
 # Discord RPC

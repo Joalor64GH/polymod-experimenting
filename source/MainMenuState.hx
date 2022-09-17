@@ -322,6 +322,15 @@ class MainMenuState extends MusicBeatState
 				MusicBeatState.switchState(new TitleState());
 			}
 
+			#if MODS_ALLOWED
+			if (FlxG.keys.justPressed.M)
+			{
+				FlxG.sound.play(Paths.sound('storySelect'), 0.4);
+				Main.switchState(this, new PolymodsMenuState());
+			}
+			#end
+
+
 			if (controls.ACCEPT)
 			{
 			        if (optionShit[curSelected] == '${menuJSON.links[0]}') {

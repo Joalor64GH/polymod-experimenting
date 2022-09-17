@@ -2,7 +2,7 @@ package editors;
 
 import polymod.ModList;
 import polymod.PolymodHandler;
-import polymod.PolymodEditorStateOption;
+import polymod.PolymodsMenuStateOption;
 import flixel.group.FlxGroup;
 import flixel.system.FlxSound;
 import flash.text.TextField;
@@ -17,14 +17,14 @@ import flixel.util.FlxColor;
 import flixel.ui.FlxButton;
 import lime.utils.Assets;
 
-class PolymodEditorState extends MusicBeatState
+class PolymodsMenuState extends MusicBeatState
 {
 	#if MODS_ALLOWED
 	var curSelected:Int = 0;
 
-	var page:FlxTypedGroup<PolymodEditorStateOption> = new FlxTypedGroup<PolymodEditorStateOption>();
+	var page:FlxTypedGroup<PolymodsMenuStateOption> = new FlxTypedGroup<PolymodsMenuStateOption>();
 
-	public static var instance:PolymodEditorState;
+	public static var instance:PolymodsMenuState;
 
 	public static var enabledMods = [];
 
@@ -74,7 +74,7 @@ class PolymodEditorState extends MusicBeatState
 
 	function loadMods()
 	{
-		page.forEachExists(function(option:PolymodEditorStateOption)
+		page.forEachExists(function(option:PolymodsMenuStateOption)
 		{
 			page.remove(option);
 			option.kill();
@@ -85,7 +85,7 @@ class PolymodEditorState extends MusicBeatState
 
 		for (modId in PolymodHandler.metadataArrays)
 		{
-			var modOption = new PolymodEditorStateOption(ModList.modMetadatas.get(modId).title, modId, optionLoopNum);
+			var modOption = new PolymodsMenuStateOption(ModList.modMetadatas.get(modId).title, modId, optionLoopNum);
 			page.add(modOption);
 			optionLoopNum++;
 			coolId = modId;
@@ -107,7 +107,7 @@ class PolymodEditorState extends MusicBeatState
 		bgtwo = new FlxSprite(720, 0).loadGraphic(Paths.image("menuDesat"));
 		bgtwo.screenCenter(Y);
 
-		PolymodEditorState.enableButton = new FlxButton(bg.x + 1120, 309, "Enable Mod", function()
+		PolymodsMenuState.enableButton = new FlxButton(bg.x + 1120, 309, "Enable Mod", function()
 		{
 			page.members[curSelected].Mod_Enabled = true;
 			if (!enabledMods.contains(page.members[curSelected].Option_Value))
@@ -117,7 +117,7 @@ class PolymodEditorState extends MusicBeatState
 			ModList.setModEnabled(page.members[curSelected].Option_Value, page.members[curSelected].Mod_Enabled);
 		});
 
-		PolymodEditorState.disableButton = new FlxButton(bg.x + 1120, 380, "Disable Mod", function()
+		PolymodsMenuState.disableButton = new FlxButton(bg.x + 1120, 380, "Disable Mod", function()
 		{
 			page.members[curSelected].Mod_Enabled = false;
 			if (enabledMods.contains(page.members[curSelected].Option_Value))
@@ -176,7 +176,7 @@ class PolymodEditorState extends MusicBeatState
 		{
 			PolymodHandler.loadMods();
 			FlxG.mouse.visible = false;
-			LoadingState.loadAndSwitchState(new MasterEditorState());
+			LoadingState.loadAndSwitchState(new MainMenuState());
 		}
 
 		if (curSelected < 0)
