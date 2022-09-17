@@ -73,7 +73,8 @@ class CoolUtil
 		}
 
 		return daList;
-
+	}
+	
 	public static function coolTextFilePolymod(path:String):Array<String>
 	{
 		var daList:Array<String> = PolymodAssets.getText(path).trim().split('\n');
@@ -84,7 +85,6 @@ class CoolUtil
 		}
 
 		return daList;
-	}
 	}
 
 	public static function coolReplace(string:String, sub:String, by:String):String
