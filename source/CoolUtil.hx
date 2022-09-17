@@ -7,6 +7,7 @@ import lime.utils.AssetLibrary;
 import lime.utils.AssetManifest;
 #if sys
 import sys.io.File;
+import polymod.backends.PolymodAssets;
 import sys.FileSystem;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
@@ -72,6 +73,18 @@ class CoolUtil
 		}
 
 		return daList;
+
+	public static function coolTextFilePolymod(path:String):Array<String>
+	{
+		var daList:Array<String> = PolymodAssets.getText(path).trim().split('\n');
+
+		for (i in 0...daList.length)
+		{
+			daList[i] = daList[i].trim();
+		}
+
+		return daList;
+	}
 	}
 
 	public static function coolReplace(string:String, sub:String, by:String):String

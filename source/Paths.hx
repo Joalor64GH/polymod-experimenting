@@ -16,6 +16,7 @@ import flixel.FlxSprite;
 #if MODS_ALLOWED
 import sys.io.File;
 import sys.FileSystem;
+import polymod.backends.PolymodAssets;
 #end
 import flixel.graphics.FlxGraphic;
 import openfl.display.BitmapData;

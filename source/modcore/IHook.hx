@@ -19,7 +19,7 @@
  * An interface which can be added to a class, which indicates that one or more functions on it are script hooks.
  * A compile time macro will apply logic as needed to ensure scripts are loaded and run.
  */
-package;
+package modcore;
 
 import polymod.hscript.HScriptable;
 

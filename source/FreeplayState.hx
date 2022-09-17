@@ -20,6 +20,8 @@ import openfl.utils.Assets as OpenFlAssets;
 import WeekData;
 #if MODS_ALLOWED
 import sys.FileSystem;
+import polymod.Polymod;
+import polymod.backends.PolymodAssets;
 #end
 
 using StringTools;

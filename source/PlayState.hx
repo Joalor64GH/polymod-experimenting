@@ -2,6 +2,10 @@ package;
 
 #if MODS_ALLOWED
 import ModsMenuState.ModMetadata;
+import polymod.backends.PolymodAssets;
+import polymod.fs.PolymodFileSystem;
+import polymod.Polymod;
+import polymod.backends.PolymodAssetLibrary;
 #end
 import haxe.macro.Expr.Case;
 import flixel.graphics.FlxGraphic;
